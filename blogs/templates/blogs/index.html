@@ -1,8 +1,12 @@
+{% extends "blogs/base.html" %}
+{% block page_header %}
+<h1 style="text-align: center; color: #3498db; margin-bottom: 30px;">📚 Blog Posts</h1>
+{% endblock page_header %}
+
 {% block content %}
 <div style="max-width: 700px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
 
-    <h1 style="text-align: center; color: #3498db; margin-bottom: 30px;">📚 Blog Posts</h1>
-
+    
     <div style="text-align: right; margin-bottom: 20px;">
         <a href="{% url 'create_blog' %}" style="text-decoration: none; background-color: #3498db; color: white; padding: 10px 15px; border-radius: 5px;">
             ➕ Create New Blog
@@ -17,7 +21,7 @@
             <p style="font-size: 0.9em; color: gray;">Created on: {{ blog.date_created }}</p>
         </div>
     {% empty %}
-        <p style="text-align: center;">No blog posts yet. Be the first to <a href="{% url 'create-blog' %}">create one</a>!</p>
+        <p style="text-align: center;">No blog posts yet. Be the first to <a href="{% url 'create_blog' %}">+New</a>!</p>
     {% endfor %}
 
 </div>
