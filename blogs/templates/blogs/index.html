@@ -15,7 +15,9 @@
 
     {% for blog in blogs %}
         <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 20px; box-shadow: 0 0 5px rgba(0,0,0,0.05);">
-            <h2 style="color: #2c3e50;">{{ blog.title }}</h2>
+            <h2 style="color: #2c3e50;">
+                <a style="text-decoration: none;" href="{% url 'blog-detail' blog.id %}">{{ blog.title }}</a>
+            </h2>
             <p><strong>Author:</strong> {{ blog.author }}</p>
             <p style="line-height: 1.6;">{{ blog.content }}</p>
             <p style="font-size: 0.9em; color: gray;">Created on: {{ blog.date_created }}</p>

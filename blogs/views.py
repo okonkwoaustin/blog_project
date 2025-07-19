@@ -23,3 +23,12 @@ def create_blog(request):
         template = "blogs/create_blog.html"
         context = {"form": form}
         return render(request, template, context)
+    
+def blog_detail(request, blog_id):
+    """Detail view for a blog"""
+    blog = Blog.objects.get(id = blog_id)
+    context = {
+        "blog": blog
+    }
+    template = "blogs/blog_detail.html"
+    return render(request, template, context)
